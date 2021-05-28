@@ -6,7 +6,7 @@ import { View, StyleSheet, TouchableOpacity, FlatList } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Text } from 'react-native-paper'
 import axios from 'axios'
-
+import Button from '../components/Button'
 // import * as SecureStore from 'expo-secure-store';
 
 let result
@@ -76,9 +76,16 @@ export default function MaterialsListScreen({ navigation }) {
       data={result}
       ListHeaderComponent={ListHeader}
       renderItem={({ item }) => (
-        <View style={{ justifyContent: 'center', marginBottom: 10 }}>
-          <Text style={{ backgroundColor: 'purple', color: 'white', padding: 15, width: 411 }}>{item.work_type}</Text>
-        </View>
+        // <View style={{ justifyContent: 'center', marginBottom: 10 }}>
+        //   <Text style={{ backgroundColor: 'purple', color: 'white', padding: 15, width: 411 }}>{item.work_type}</Text>
+        // </View>
+        <Button
+          style={{ justifyContent: 'center', marginBottom: 10, backgroundColor: '#00008B', color: '#fff', padding: 15, width: 411 }}
+          mode="outlined"
+          onPress={() => navigation.navigate('MaterialDetailsScreen', { item })}
+        >
+          <Text style={styles.textStyle}>{item.work_type}</Text>
+        </Button>
       )}
     />
   )

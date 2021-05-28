@@ -15,6 +15,8 @@ import {
   MaterialsListScreen,
   ServicePage,
   MaterialPage,
+  ServiceDetailsScreen,
+  MaterialDetailsScreen,
 } from './src/screens'
 
 const Stack = createStackNavigator()
@@ -40,6 +42,8 @@ export default function App() {
           <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen} />
           <Stack.Screen name="ServicePage" component={ServicePage} />
           <Stack.Screen name="MaterialPage" component={MaterialPage} />
+          <Stack.Screen name="ServiceDetailsScreen" component={ServiceDetailsScreen} />
+          <Stack.Screen name="MaterialDetailsScreen" component={MaterialDetailsScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
